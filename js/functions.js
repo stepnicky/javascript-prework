@@ -1,3 +1,23 @@
+function playGame(playerInput){
+    clearMessages();
+
+    // Computer move
+
+    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    console.log('Wylosowana liczba to: ' + randomNumber);
+    let computerMove = getMoveName(randomNumber);
+
+    // Player move
+
+    
+    console.log('Gracz wybrał: ' + playerInput);
+    let playerMove = getMoveName(playerInput);
+
+    // Game result
+
+    displayResult(computerMove, playerMove);
+}
+
 function displayResult(argComputerMove, argPlayerMove){
     console.log('moves: ', argComputerMove, argPlayerMove);
     
@@ -32,7 +52,7 @@ function getMoveName(MoveId){
     } else {
         return 'nieznany ruch';
     }
-  }
+}
 
 function printMessage(msg){
 	let div = document.createElement('div');
