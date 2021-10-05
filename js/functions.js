@@ -1,3 +1,4 @@
+
 function playGame(playerInput){
     clearMessages();
 
@@ -23,17 +24,9 @@ function displayResult(argComputerMove, argPlayerMove){
     
     printMessage('Wybrałem ' + argComputerMove + ', a Ty ' + argPlayerMove + '.');
     
-    if (argComputerMove == 'kamień' && argPlayerMove == 'papier'){
+    if (argComputerMove == 'kamień' && argPlayerMove == 'papier' || argComputerMove == 'papier' && argPlayerMove == 'nożyce' || argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
         printMessage('Ty wygrywasz!');
-    } else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
-        printMessage('Ja wygrywam!');
-    } else if (argComputerMove == 'papier' && argPlayerMove == 'kamień') {
-        printMessage('Ja wygrywam!');
-    } else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
-        printMessage('Ty wygrywasz!');
-    } else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
-        printMessage('Ty wygrywasz!');
-    } else if (argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
+    } else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce' || argComputerMove == 'papier' && argPlayerMove == 'kamień' || argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
         printMessage('Ja wygrywam!');
     } else if (argComputerMove == argPlayerMove) {
         printMessage('Remis!');   
