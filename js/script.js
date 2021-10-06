@@ -11,3 +11,8 @@ playPaper.addEventListener("click", function(){
 playScissors.addEventListener("click", function(){
     playGame(3);
 });
+
+// Result
+
+let computerPoints = 0;
+let playerPoints = 0;

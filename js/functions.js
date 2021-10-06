@@ -1,3 +1,8 @@
+function updateResult(){
+    let result = document.getElementById('result');
+    result.innerHTML = playerPoints + ' - ' + computerPoints;
+}
+
 
 function playGame(playerInput){
     clearMessages();
@@ -22,35 +27,35 @@ function playGame(playerInput){
 function displayResult(argComputerMove, argPlayerMove){
     console.log('moves: ', argComputerMove, argPlayerMove);
     
-    printMessage('Wybrałem ' + argComputerMove + ', a Ty ' + argPlayerMove + '.');
+    printMessage('I choose ' + argComputerMove + ', and you choose ' + argPlayerMove + '.');
     
-    if (argComputerMove == 'kamień' && argPlayerMove == 'papier' || argComputerMove == 'papier' && argPlayerMove == 'nożyce' || argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
-        printMessage('Ty wygrywasz!');
-    } else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce' || argComputerMove == 'papier' && argPlayerMove == 'kamień' || argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
-        printMessage('Ja wygrywam!');
+    if (argComputerMove == 'rock' && argPlayerMove == 'paper' || argComputerMove == 'paper' && argPlayerMove == 'scissors' || argComputerMove == 'scissors' && argPlayerMove == 'rock'){
+        printMessage('You win!');
+        playerPoints += 1;
+        updateResult();
+    } else if (argComputerMove == 'rock' && argPlayerMove == 'scissors' || argComputerMove == 'paper' && argPlayerMove == 'rock' || argComputerMove == 'scissors' && argPlayerMove == 'paper') {
+        printMessage('I win!');
+        computerPoints += 1;
+        updateResult();
     } else if (argComputerMove == argPlayerMove) {
-        printMessage('Remis!');   
-    } else if (argPlayerMove == 'nieznany ruch') {
-        printMessage('Wykonałeś nieznany ruch...');
+        printMessage("It's a tie!");   
     }
 }
 
 function getMoveName(MoveId){
     if(MoveId == 1){
-      return 'kamień';
+      return 'rock';
     } else if (MoveId == 2) {
-        return 'papier';
+        return 'paper';
     } else if (MoveId == 3) {
-        return 'nożyce';
-    } else {
-        return 'nieznany ruch';
+        return 'scissors';
     }
 }
 
 function printMessage(msg){
-	let div = document.createElement('div');
-	div.innerHTML = msg;
-	document.getElementById('messages').appendChild(div);
+	let h3 = document.createElement('h3');
+	h3.innerHTML = msg;
+	document.getElementById('messages').appendChild(h3);
 }
 
 function clearMessages(){

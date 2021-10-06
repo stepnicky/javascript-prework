@@ -3,17 +3,43 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Kamień, papier, nożyce</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="container">
-		<div id="buttons">
-            <button id="play-rock">Kamień</button>
-            <button id="play-paper">Papier</button>
-            <button id="play-scissors">Nożyce</button>
+    <section class="splash">
+        <div class="splash-inner">
+            <h1>Rock, paper, scissors!</h1>
         </div>
-		<div id="messages"></div>
-	</div>
+    </section>
+    <section class="rules">
+        <div class="container">
+            <h2>Rules</h2>
+            <p>You probably already know the rules for Rock, paper, scissors. But if you don't, then take a look at the graph below.</p>
+            <div class="rules-img">
+                <img src="https://cf.geekdo-images.com/qXpnZ-jhEZv15Hi0-aC0IQ__itemrep/img/DSayRiF0doCvO4CjO2S2IJ2VGGo=/fit-in/246x300/filters:strip_icc()/pic4965405.jpg" alt="rules-graph">
+            </div>
+            <p>It's quite easy - rock beats the scissors, the scissors beat the paper, and paper beats the rock.</p>
+        </div>
+    </section>
+    <section class="game"> 
+        <div class="container">
+            <h2>Let's play rock, paper, scissors!</h2>
+            <img src="https://3qb9rm3ii1195ulba2zpd8yh-wpengine.netdna-ssl.com/wp-content/uploads/sites/2/2019/03/MvM_arm-wrestle_Final_3-22_no-header-860x505.jpg" alt="img">
+            <div class="result">
+                <h3>Score</h3>
+                <h3 id="result">0 - 0</h3>
+            </div>
+            <div id="messages"></div>
+            <div id="buttons">
+                <i class="far fa-hand-rock" id="play-rock"></i>
+                <i class="far fa-hand-paper" id="play-paper"></i>
+                <i class="far fa-hand-scissors" id="play-scissors"></i>
+                <h3>Choose your weapon!</h3>
+            </div>
+        </div>
+        
+    </section> 
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
 </body>
