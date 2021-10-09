@@ -1,12 +1,22 @@
-function updateResult(){
-    let result = document.getElementById('result');
+const updateResult = function (){
+    const result = document.getElementById('result');
     result.innerHTML = playerPoints + ' - ' + computerPoints;
 }
 
 
-function playGame(playerInput){
+ const playGame = function(playerInput){
     clearMessages();
-
+    const backgroundImage = document.getElementById('messages');
+    backgroundImage.style.setProperty('display', 'block');
+    backgroundImage.animate([
+        { transform: 'rotate(10deg)' },
+        { transform: 'rotate(-10deg)' },
+        { transform: 'rotate(10deg)' },
+        { transform: 'rotate(-10deg)' },
+        { transform: 'rotate(0)' }
+    ], {
+        duration: 2000
+    });
     // Computer move
 
     let randomNumber = Math.floor(Math.random() * 3 + 1);
@@ -22,27 +32,39 @@ function playGame(playerInput){
     // Game result
 
     displayResult(computerMove, playerMove);
+    setTimeout(()=>{
+        backgroundImage.style.setProperty('display', 'none');
+    }, 4000);
 }
 
-function displayResult(argComputerMove, argPlayerMove){
+ const displayResult = function (argComputerMove, argPlayerMove){
     console.log('moves: ', argComputerMove, argPlayerMove);
     
-    printMessage('I choose ' + argComputerMove + ', and you choose ' + argPlayerMove + '.');
+    setTimeout(()=>{
+        printMessage('I choose ' + argComputerMove + ', and you choose ' + argPlayerMove + '.');
+    }, 2000);
+    
     
     if (argComputerMove == 'rock' && argPlayerMove == 'paper' || argComputerMove == 'paper' && argPlayerMove == 'scissors' || argComputerMove == 'scissors' && argPlayerMove == 'rock'){
-        printMessage('You win!');
+        setTimeout(()=>{
+            printMessage('You win!');
+        }, 2000);
         playerPoints += 1;
-        updateResult();
+        setTimeout(updateResult, 2000);
     } else if (argComputerMove == 'rock' && argPlayerMove == 'scissors' || argComputerMove == 'paper' && argPlayerMove == 'rock' || argComputerMove == 'scissors' && argPlayerMove == 'paper') {
-        printMessage('I win!');
+        setTimeout(()=>{
+            printMessage('I win!');
+        }, 2000);
         computerPoints += 1;
-        updateResult();
+        setTimeout(updateResult, 2000); 
     } else if (argComputerMove == argPlayerMove) {
-        printMessage("It's a tie!");   
+        setTimeout(()=>{
+            printMessage("It's a tie!");
+        }, 2000);   
     }
 }
 
-function getMoveName(MoveId){
+ const getMoveName = function (MoveId){
     if(MoveId == 1){
       return 'rock';
     } else if (MoveId == 2) {
@@ -52,12 +74,12 @@ function getMoveName(MoveId){
     }
 }
 
-function printMessage(msg){
-	let h3 = document.createElement('h3');
-	h3.innerHTML = msg;
-	document.getElementById('messages').appendChild(h3);
+const printMessage = function (msg){
+	let h2 = document.createElement('h2');
+	h2.innerHTML = msg;
+	document.getElementById('display').appendChild(h2);
 }
 
-function clearMessages(){
-	document.getElementById('messages').innerHTML = '';
+const clearMessages = function (){
+	document.getElementById('display').innerHTML = '';
 }

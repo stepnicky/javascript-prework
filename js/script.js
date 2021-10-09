@@ -1,6 +1,7 @@
-let playRock = document.getElementById('play-rock');
-let playPaper = document.getElementById('play-paper');
-let playScissors = document.getElementById('play-scissors');
+{
+const playRock = document.getElementById('play-rock'),
+playPaper = document.getElementById('play-paper'),
+playScissors = document.getElementById('play-scissors');
 
 playRock.addEventListener("click", function(){
     playGame(1);
@@ -11,8 +12,6 @@ playPaper.addEventListener("click", function(){
 playScissors.addEventListener("click", function(){
     playGame(3);
 });
-
-// Result
-
-let computerPoints = 0;
-let playerPoints = 0;
+}
+let playerPoints = 0, computerPoints = 0;
+        

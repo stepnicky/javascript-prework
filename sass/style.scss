@@ -50,6 +50,24 @@ h2 {
             transform: scale(1.2);  
         }
     }
+    #messages {
+        background-image: url(https://3qb9rm3ii1195ulba2zpd8yh-wpengine.netdna-ssl.com/wp-content/uploads/sites/2/2019/03/MvM_arm-wrestle_Final_3-22_no-header-860x505.jpg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+        display: none;
+        position: relative;
+        #display {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffff19;
+            border-radius: 10%;
+        }
+    }    
 }
 
 
